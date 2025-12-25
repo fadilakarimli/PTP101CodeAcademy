@@ -1,0 +1,55 @@
+body {
+  background-color: #fcf6ef;
+  font-family: "Times New Roman", serif;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+}
+
+.wrapper {
+  width: 650px;
+  margin: 60px auto;
+  text-align: center;
+}
+
+.logo {
+  width: 120px;
+  height: 120px;
+  margin-bottom: 15px;
+}
+
+h1 {
+  font-size: 26px;
+  letter-spacing: 1px;
+  margin: 10px 0 15px 0;
+  color: #000;
+}
+
+hr {
+  width: 90%;
+  border: none;
+  border-top: 1px solid #89a8b2;
+  margin-bottom: 25px;
+}
+
+.section {
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 17px;
+  color: #c04000;
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+p {
+  text-align: left;
+  font-size: 15px;
+  line-height: 1.4;
+  margin: 0;
+}
+
+em {
+  font-style: italic;
+}

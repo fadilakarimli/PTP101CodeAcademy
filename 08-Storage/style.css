@@ -1,0 +1,15 @@
+ body {
+  transition: 0.3s;
+}
+
+/* light  */
+ .light {
+  background-color: white;
+  color: black;
+} 
+
+/* dark  */
+.dark {
+  background-color: #121212;
+  color: white;
+}

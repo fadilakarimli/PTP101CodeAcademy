@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Products Table</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+
+  <style>
+    .favCount {
+      position: absolute;
+      background: black;
+      color: white;
+      border-radius: 50%;
+      padding: 2px 6px;
+      font-size: 14px;
+      top: -5px;
+      right: -5px;
+    }
+
+    .favoriteBox {
+      position: fixed;
+      top: 20px;
+      right: 20px;             
+      cursor: pointer;
+    }
+    .favHeart{
+      font-size: 30px;
+      color: red;
+    }
+  </style>
+  <body>
+    <div class="favoriteBox">
+      <i class="fa-solid fa-heart favHeart"></i>
+      <span class="favCount">0</span>
+    </div>
+
+    <button id="addBtn">Add Product</button>
+
+    <div id="addForm" style="display: none; margin: 15px 0">
+      <input type="text" id="title" placeholder="Title" />
+      <input type="text" id="category" placeholder="Category" />
+      <input type="number" id="price" placeholder="Price" />
+      <input type="text" id="image" placeholder="Image URL" />
+      <input type="number" id="rating" placeholder="Rating (0-5)" />
+      <button id="createBtn">Create</button>
+    </div>
+
+    <table border="1" style="margin-top: 39px">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Image</th>
+          <th>Title</th>
+          <th>Category</th>
+          <th>Price</th>
+          <th>Rating</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="productTableBody"></tbody>
+    </table>
+
+    <script type="module" src="./main.js"></script>
+  </body>
+</html>

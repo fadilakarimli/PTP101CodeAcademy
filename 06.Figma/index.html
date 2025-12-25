@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="az">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quickly - Footer</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      footer {
+        background-color: #3d4f56;
+        color: #ffffff;
+        padding: 60px 0 0;
+      }
+
+      #container {
+        width: 100%;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      .footer-content {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 40px;
+        padding-bottom: 40px;
+      }
+
+      .footer-brand {
+        flex: 1;
+        min-width: 250px;
+      }
+
+      /* .brand-name {
+        font-size: 48px;
+        font-weight: 300;
+        margin-bottom: 30px;
+      } */
+
+      .social-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .social-icon {
+        width: 50px;
+        height: 50px;
+        border: 2px solid #ffffff;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 20px;
+        transition: 0.3s;
+      }
+
+      .social-icon:hover {
+        background: #ffffff;
+        color: #3d4f56;
+        transform: translateY(-5px);
+      }
+
+      .footer-column {
+        flex: 1;
+        min-width: 200px;
+      }
+
+      .footer-column h3 {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      .footer-column ul {
+        list-style: none;
+      }
+
+      .footer-column ul li {
+        margin-bottom: 12px;
+      }
+
+      .footer-column ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+      }
+
+      .footer-column ul li a:hover {
+        transform: translateX(5px);
+        opacity: 0.8;
+      }
+
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      .footer-text {
+        display: inline-block;
+        opacity: 0;
+        animation: fadeUp 1s ease forwards, swing 3s ease-in-out infinite 1s;
+      }
+
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes swing {
+        0% {
+          transform: rotate(1deg);
+        }
+        50% {
+          transform: rotate(-1deg);
+        }
+        100% {
+          transform: rotate(1deg);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <footer>
+      <section id="container">
+        <div class="container">
+          <div class="footer-content">
+            <div class="footer-brand">
+              <h1 class="brand-name">Quickly</h1>
+              <div class="social-links">
+                <button class="social-icon">f</button>
+                <button class="social-icon">𝕏</button>
+                <button class="social-icon">in</button>
+                <button class="social-icon">📷</button>
+              </div>
+            </div>
+
+            <div class="footer-column">
+              <h3>Our Company</h3>
+              <ul>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Company Vision</a></li>
+                <li><a href="#">Our History</a></li>
+                <li><a href="#">Investory</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h3>Our Company</h3>
+              <ul>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Company Vision</a></li>
+                <li><a href="#">Our History</a></li>
+                <li><a href="#">Investory</a></li>
+              </ul>
+            </div>
+
+            <div class="footer-column">
+              <h3>Our Company</h3>
+              <ul>
+                <li><a href="#">Our Team</a></li>
+                <li><a href="#">Company Vision</a></li>
+                <li><a href="#">Our History</a></li>
+                <li><a href="#">Investory</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-bottom">
+            <div class="footer-text">
+              © 2022 Quickly LTD | powered by Amirov Kanan
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
+  </body>
+</html>
