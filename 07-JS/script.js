@@ -1225,3 +1225,237 @@
 
 
 
+
+
+
+
+// 1) number type'lı bir dəyişən daxil edin.
+// Verilən rəqəmin tək və ya cüt olduğunu console'a çıxaran proqram tərtib edin.
+
+// Məsələn: number = 15;
+// Nəticə: 15 tək rəqəmdir
+
+// Məsələn: number = 8;
+// Nəticə: 8 cüt rəqəmdir
+
+// let number = 15;
+// if (number % 2 === 0) {
+//     console.log("Cut Ededdir - " + number);
+// } else {
+//     console.log("Tek Ededdir - " + number);
+
+// }
+
+// // ------------------------
+
+// // 2) Verilmiş ədədin bölənlərinin sayını tapın
+
+// // Input:
+// let number2 = 12
+// let bolenler = 0
+
+// // 1, 2, 3, 4, 6, 12 →
+
+// // Output: 12 ədədinin 6 böləni var
+// for (let i = 0; i <= number; i++) {
+//     if (number % i === 0) {
+//         bolenler++
+//     }
+// }
+// console.log(bolenler);
+
+
+
+
+// // ------------------------
+
+// // 3) Göndərilmiş 2 ədəddən 1-cisini 2-cisinin qüvvətinə yüksəldən function. Misalçün function-a gələn ilk arqumenti 2-ci arqument qədər qüvvətə yüksəldən function
+
+// function power(a, b) {
+//     return a ** b
+// }
+// console.log(power(4, 2));
+
+
+// // ------------------------
+
+// // 4) hər hansı string'i tərsinə çevirən funksiya yazın
+// let orijinal = "hello";
+// function tersCevir(str) {
+//     let ters = "";
+//     for (let i = str.length - 1; i >= 0; i--) {
+//         ters += str[i];
+//     }
+//     return ters;
+// }
+
+
+// const ters = tersCevir(orijinal);
+// console.log(ters);
+
+// //  "code" -> "ecod"
+// //  "hello" -> "olleh"
+
+// // ------------------------
+
+// const products = [
+//     // Electronics (3)
+//     { id: 1, title: "Smartphone", price: 799.99, category: "Electronics" },
+//     { id: 2, title: "Smartwatch", price: 249.99, category: "Electronics" },
+//     { id: 11, title: "Tablet", price: 499.99, category: "Electronics" },
+//     { id: 3, title: "Laptop", price: 1299.99, category: "Computers" },
+//     { id: 4, title: "Gaming PC", price: 1599.99, category: "Computers" },
+//     { id: 12, title: "Mini PC", price: 899.99, category: "Computers" },
+//     { id: 5, title: "Coffee Maker", price: 99.99, category: "Home Appliances" },
+//     { id: 6, title: "Air Fryer", price: 149.99, category: "Home Appliances" },
+//     { id: 13, title: "Microwave Oven", price: 199.99, category: "Home Appliances" },
+//     { id: 7, title: "Headphones", price: 199.99, category: "Audio" },
+//     { id: 8, title: "Bluetooth Speaker", price: 89.99, category: "Audio" },
+//     { id: 14, title: "Soundbar", price: 249.99, category: "Audio" },
+//     { id: 9, title: "Smart TV", price: 699.99, category: "TV & Entertainment" },
+//     { id: 10, title: "Projector", price: 299.99, category: "TV & Entertainment" },
+//     { id: 15, title: "Streaming Device", price: 59.99, category: "TV & Entertainment" }
+
+// ];
+
+
+// // # product arrayindəki producların qiymətləri cəmini və ortalamasını tapın
+
+// let sum = 0;
+// for (let i = 0; i < products.length; i++) {
+//     sum += products[i].price
+// }
+// let avarage = sum / products.length;
+// console.log(sum);
+// console.log(avarage);
+
+
+// // # qiyməti 300 dan baha olanlar və categorysi 'Electronics' olanları array şəklində qayar
+// let priceBig300CategoryElectronics = [];
+// for (let i = 0; i < products.length; i++) {
+//     if (products[i].price > 300 && products[i].category === "Electronics") {
+//         priceBig300CategoryElectronics.push(products[i])
+//     }
+// }
+// console.log(priceBig300CategoryElectronics);
+
+// // # Məhsulları qiymətinə görə artan sırala
+// products.sort((a, b) => a.price - b.price);
+// console.log(products);
+
+
+
+
+
+
+// // # Elə məhsul varmı ki, qiyməti 1500-dən baha olsun?
+// for (let i = 0; i < products.length; i++) {
+//     if (products[i].price > 1500) {
+//         console.log("He var");
+//         break
+//     } else {
+//         console.log("Yoxdur");
+//         break    
+//     }
+// }
+
+
+
+// 9
+
+
+
+// 1) number type'lı bir dəyişən daxil edin.
+// Verilən rəqəmin tək və ya cüt olduğunu console'a çıxaran proqram tərtib edin.
+
+// Məsələn: number = 15;
+// Nəticə: 15 tək rəqəmdir
+
+// Məsələn: number = 8;
+// Nəticə: 8 cüt rəqəmdir
+
+
+// let number = 15
+// if (number % 2 === 0) {
+//     console.log('eded cutdur');
+// } else {
+//     console.log('eded sadedir');
+// }
+
+
+// ------------------------
+
+// 2) Verilmiş ədədin bölənlərinin sayını tapın
+
+// Input:
+// let number = 12
+
+// 1, 2, 3, 4, 6, 12 →
+
+// Output: 12 ədədinin 6 böləni var
+
+// let number = 12
+// let count = 0;
+
+// for (let i = 0; i <= number; i++) {
+//     if (number % i === 0)
+//         count++
+// }
+
+// console.log('ededin 6 boleni var');
+
+
+
+
+
+// ------------------------
+
+// 3) Göndərilmiş 2 ədəddən 1-cisini 2-cisinin qüvvətinə yüksəldən function. Misalçün function-a gələn ilk arqumenti 2-ci arqument qədər qüvvətə yüksəldən function
+
+// function power(a, b) {
+//     return a ** b;
+// }
+
+
+// ------------------------
+
+// 4) hər hansı string'i tərsinə çevirən funksiya yazın
+
+// const reverseString = (str) => {
+//     let reversed = "";
+//     for (let i = str.length - 1; i >= 0; i--) {
+//         reversed += str[i];
+//     }
+//     return reversed;
+// }
+
+
+// ------------------------
+
+// const products = [
+//   // Electronics (3)
+//   { id: 1, title: "Smartphone", price: 799.99, category: "Electronics" },
+//   { id: 2, title: "Smartwatch", price: 249.99, category: "Electronics" },
+//   { id: 11, title: "Tablet", price: 499.99, category: "Electronics" },
+//   { id: 3, title: "Laptop", price: 1299.99, category: "Computers" },
+//   { id: 4, title: "Gaming PC", price: 1599.99, category: "Computers" },
+//   { id: 12, title: "Mini PC", price: 899.99, category: "Computers" },
+//   { id: 5, title: "Coffee Maker", price: 99.99, category: "Home Appliances" },
+//   { id: 6, title: "Air Fryer", price: 149.99, category: "Home Appliances" },
+//   { id: 13, title: "Microwave Oven", price: 199.99, category: "Home Appliances" },
+//   { id: 7, title: "Headphones", price: 199.99, category: "Audio" },
+//   { id: 8, title: "Bluetooth Speaker", price: 89.99, category: "Audio" },
+//   { id: 14, title: "Soundbar", price: 249.99, category: "Audio" },
+//   { id: 9, title: "Smart TV", price: 699.99, category: "TV & Entertainment" },
+//   { id: 10, title: "Projector", price: 299.99, category: "TV & Entertainment" },
+//   { id: 15, title: "Streaming Device", price: 59.99, category: "TV & Entertainment" }
+// ];
+
+
+// # product arrayindəki producların qiymətləri cəmini və ortalamasını tapın
+
+// # qiyməti 300 dan baha olanlar və categorysi 'Electronics' olanları array şəklində qayar
+
+// # Məhsulları qiymətinə görə artan sırala
+
+// # Elə məhsul varmı ki, qiyməti 1500-dən baha olsun?

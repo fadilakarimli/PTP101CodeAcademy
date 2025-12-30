@@ -11,20 +11,57 @@ const price = document.getElementById("price");
 const image = document.getElementById("image");
 const rating = document.getElementById("rating");
 
-
 const favCount = document.querySelector(".favCount");
 
-let favoriteCounter = localStorage.getItem("favoriteCount")
-  ? +localStorage.getItem("favoriteCount")
-  : 0;
+// ⭐ FAVORITES localStorage
+let favorites = localStorage.getItem("favorites")
+  ? JSON.parse(localStorage.getItem("favorites"))
+  : [];
 
-favCount.innerText = favoriteCounter;
+favCount.innerText = favorites.length;
 
+// 🟢 PRODUCTS localStorage (initialProducts YOX)
+let productsData = localStorage.getItem("productsLS")
+  ? JSON.parse(localStorage.getItem("productsLS"))
+  : [...products]; // ⬅️ COPY (VACİB)
 
+// ilk dəfədirsə localStorage-a yaz
+if (!localStorage.getItem("productsLS")) {
+  localStorage.setItem("productsLS", JSON.stringify(productsData));
+}
 
-products.forEach((product , index)=>{
-  addRow(product, index)
-})
+// 🔢 PAGINATION
+const itemsPerPage = 5;
+let currentPage = 1;
+
+const prevBtn = document.getElementById("prevBtn");
+const nextBtn = document.getElementById("nextBtn");
+const pageInfo = document.getElementById("pageInfo");
+
+// id yoxdursa ver
+productsData.forEach(p => {
+  if (!p.id) p.id = Date.now() + Math.random();
+});
+
+// 📌 TABLE RENDER
+function renderTable() {
+  tableBody.innerHTML = "";
+
+  const start = (currentPage - 1) * itemsPerPage;
+  const end = start + itemsPerPage;
+
+  const pageProducts = productsData.slice(start, end);
+
+  pageProducts.forEach((product, index) => {
+    addRow(product, start + index);
+  });
+
+  const totalPages = Math.ceil(productsData.length / itemsPerPage) || 1;
+  pageInfo.innerText = `Page ${currentPage} / ${totalPages}`;
+
+  prevBtn.disabled = currentPage === 1;
+  nextBtn.disabled = currentPage === totalPages;
+}
 
 function addRow(product, index) {
   const tr = document.createElement("tr");
@@ -46,36 +83,57 @@ function addRow(product, index) {
     </td>
   `;
 
-  // delete
+  // 🗑 DELETE
   tr.querySelector(".delete-btn").addEventListener("click", () => {
-    const i = products.findIndex(p => p.id === product.id);
-    products.splice(i, 1);
-    tr.remove();
+    const i = productsData.findIndex(p => p.id === product.id);
+    if (i !== -1) productsData.splice(i, 1);
+
+    localStorage.setItem("productsLS", JSON.stringify(productsData));
+
+    favorites = favorites.filter(p => p.id !== product.id);
+    localStorage.setItem("favorites", JSON.stringify(favorites));
+    favCount.innerText = favorites.length;
+
+    if ((currentPage - 1) * itemsPerPage >= productsData.length && currentPage > 1) {
+      currentPage--;
+    }
+
+    renderTable();
   });
 
-  // favoori
-  tr.querySelector(".fav-btn").addEventListener("click", () => {
-    favoriteCounter++;
+  // ❤️ FAVORITE
+  const favBtn = tr.querySelector(".fav-btn");
 
-    favCount.innerText = favoriteCounter;
-    localStorage.setItem("favoriteCount", favoriteCounter);
+  if (favorites.some(p => p.id === product.id)) {
+    favBtn.classList.add("active");
+  }
+
+  favBtn.addEventListener("click", () => {
+    const favIndex = favorites.findIndex(p => p.id === product.id);
+
+    if (favIndex === -1) {
+      favorites.push(product);
+      favBtn.classList.add("active");
+    } else {
+      favorites.splice(favIndex, 1);
+      favBtn.classList.remove("active");
+    }
+
+    favCount.innerText = favorites.length;
+    localStorage.setItem("favorites", JSON.stringify(favorites));
   });
-
 
   tableBody.appendChild(tr);
 }
 
+// ➕ CREATE PRODUCT
+addBtn.addEventListener("click", () => {
+  addForm.style.display = "block";
+});
 
-
-
-// create
-
-addBtn.addEventListener("click" ,()=>{
- addForm.style.display = "block";
-})
-
-createBtn.addEventListener("click",()=>{
+createBtn.addEventListener("click", () => {
   const product = {
+    id: Date.now(),
     title: title.value,
     category: category.value,
     price: +price.value,
@@ -85,8 +143,12 @@ createBtn.addEventListener("click",()=>{
       count: 0
     }
   };
-   products.push(product);
-  addRow(product, products.length - 1);
+
+  productsData.push(product);
+  localStorage.setItem("productsLS", JSON.stringify(productsData));
+
+  currentPage = Math.ceil(productsData.length / itemsPerPage);
+  renderTable();
 
   addForm.style.display = "none";
 
@@ -95,15 +157,23 @@ createBtn.addEventListener("click",()=>{
   price.value = "";
   image.value = "";
   rating.value = "";
-})
+});
 
+// ⏮ ⏭ PAGINATION BUTTONS
+nextBtn.addEventListener("click", () => {
+  const totalPages = Math.ceil(productsData.length / itemsPerPage);
+  if (currentPage < totalPages) {
+    currentPage++;
+    renderTable();
+  }
+});
 
+prevBtn.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    renderTable();
+  }
+});
 
-
-
-
-
-
-
-
-
+// 🚀 FIRST LOAD
+renderTable();

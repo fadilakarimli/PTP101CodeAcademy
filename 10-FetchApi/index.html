@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8">
+  <title>Customers</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+  />
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+    th, td { border: 1px solid #ddd; padding: 8px; text-align: center; }
+    th { background: #f0f0f0; }
+
+    #addForm { display: none; margin-top: 10px; }
+    #addForm input { margin-right: 5px; padding: 5px; }
+    button { cursor: pointer; padding: 5px 10px; margin: 2px; }
+  </style>
+</head>
+<body>
+
+<h2>Customers</h2>
+<button id="addBtn">Add Customer</button>
+
+<div id="addForm">
+  <input id="companyName" placeholder="Company Name">
+  <input id="contactName" placeholder="Contact Name">
+  <input id="contactTitle" placeholder="Contact Title">
+  <input id="city" placeholder="City">
+  <input id="country" placeholder="Country">
+  <input id="phone" placeholder="Phone">
+  <button id="createBtn">Create</button>
+</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Company</th>
+      <th>Contact</th>
+      <th>Title</th>
+      <th>City</th>
+      <th>Country</th>
+      <th>Phone</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody id="customerTableBody"></tbody>
+</table>
+
+<script src="./script.js"></script>
+</body>
+</html>

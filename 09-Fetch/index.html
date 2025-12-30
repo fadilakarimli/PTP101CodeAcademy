@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="az">
+<head>
+  <meta charset="UTF-8" />
+  <title>Users API</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f8;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .users {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    .user-card {
+      background: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .user-card h3 {
+      margin: 0 0 8px;
+      color: #333;
+    }
+
+    .user-card p {
+      margin: 4px 0;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .email {
+      color: #0066cc;
+      word-break: break-all;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>İstifadəçilər</h1>
+
+  <div class="users" id="users"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
