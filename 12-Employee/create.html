@@ -1,0 +1,49 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Employee Management</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Employee Management</h1>
+
+    <button class="add-employee-btn" id="toggleFormBtn">New Employee</button>
+
+    <div class="form-container" id="formContainer">
+      <form id="employeeForm" class="form">
+        <input type="text" id="fullName" placeholder="Full Name" required />
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="number" id="age" placeholder="Age" min="18" max="65" required />
+        <input type="number" id="price" placeholder="Price" required />
+        <button type="submit">Add Employee</button>
+      </form>
+    </div>
+
+    <!-- Employee Table -->
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Age</th>
+          <th>Price</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="employeeTableBody">
+        <tr>
+          <td colspan="6" class="empty-state">No employees yet. Click "New Employee" to add one.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
